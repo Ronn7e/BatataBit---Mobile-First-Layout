@@ -1,0 +1,17 @@
+
+.main-tables-container{
+    justify-content: center;
+}
+
+.main-currency-table .currency-table--title{
+    text-align: center;
+}
+
+.main-commission-table .commission-table--title{
+   text-align: center;
+}
+
+.bitcoin-img-container h2 {
+    font-size: 3.8rem;
+    line-height: 4rem;
+}

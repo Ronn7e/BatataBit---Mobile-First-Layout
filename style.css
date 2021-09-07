@@ -1,0 +1,670 @@
+/*
+1. Posicionamiento
+2. Modelo de caja(box model)
+3. Tipografía
+4. Visuales
+5. Otros 
+
+*/
+:root{
+   /*Colores*/
+   --linear-bg: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+   --bitcoin-orange: #F7931A; 
+   --soft-orange: #FFE9D5;
+   --secondary-blue: #1A9AF7;
+   --soft-blue:#E7F5FF;
+   --warm-black:#201E1C;
+   --black:#282623;
+   --grey:#BABABA;
+   --off-white: #FAF8F7;
+   --just-white: #FFFFFF;
+}
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans',sans-serif;
+}
+
+header{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /*Para centrar verticalmente*/
+    width: 100%;
+    min-width: 320px; /*Xq es el mínimo en celulares*/
+    height: 334px;
+    text-align: center;
+    background: var(--linear-bg);
+
+/* Con esto hago una animación en el fondo, aunque no me agrada mucho
+     background-size: 400% 400%;
+
+    -webkit-animation: bgAnimateBitcoin 20s ease infinite;
+    -moz-animation: bgAnimateBitcoin 20s ease infinite;
+    animation: bgAnimateBitcoin 20s ease infinite;
+}
+
+@-webkit-keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes bgAnimateBitcoin {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+
+*/
+
+}
+
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center; /*Para centrar un elemento que tenga un contenedor con display flex(el contenedor padre)*/
+}
+
+.header--title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.header--title-container h1{
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--just-white);
+}
+
+.header--title-container p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight:500;
+    line-height: 1.8rem;
+    color:var(--soft-orange);
+}
+
+.header--title-container .header--button{
+    position: absolute;
+    /*left: calc(50% - 115px);*/ 
+    /* Para los elementos con una posición absoluta (aquellos que tienen la propiedad position: absolute ó position: fixed), la propiedad left determina la distancia entre el margen izquierdo del elemento y el borde izquierdo de su bloque contenedor.
+
+    calc(): sirve para hacer calculos. Se puede usar para operar con medidas, frecuencias, ángulos, tiempo, porcentajes, números y enteros.
+    
+    el 50% es para que el botón se posicione justo en la mitad de la pantalla(contendor), pero no centrado como queremos, sino que allí comienza. Entonces hay que restarle a eso la mitad de lo que mide nuestro botón para correrlo más al centro. Es decir, en realidad debería ser (50% - 229/2). 
+
+    Aquí algunos ejemplos:
+    
+    top: calc(100% - 24px);
+	left: calc(50% - 114.5px);
+
+    */
+
+    /*aqui también centro ya que al poner que no haya distancia ni a la izquierda ni a la derecha le centro al botón. Es como que lo forzo a estar en el centro*/
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 270px;
+    display:block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16) ; /* offset en x, offset en y, el difuminado y el color*/
+    border: none; /*Borro xsicaso tenia un estilo de borde antes*/
+    border-radius:5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none; /*Quito el subrayado del link*/
+    color: var(--black);
+
+}    
+
+.header--button span{
+    display: inline-block;
+    width: 13px; /*es para separar la flecha del texto*/
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/arrow-down.svg');
+}
+
+/*Aqui empiezan los estilos del Main ----------------
+----------------------------------------------------*/
+
+main{
+    width: 100%;
+    height: auto; /*Con esto el contenido define la aultura del contenedor*/
+    background-color: var(--off-white);
+}
+
+.main-exchange-container{
+    width: 100%;
+    min-width: 320px; /*Solo es porsicaso, en realidad no hay nada que sea menor a 320px */
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.main-exchange-container--title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-exchange-container .backgroundImg{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/images/bitcoin.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-exchange-container h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color:#757575;
+}
+
+/*Estilos de las tablas----------------------------------------*/
+
+/*Primero con el slider usando el contenedor de las tablas*/
+
+.main-tables-container{
+    display: flex;
+    flex-direction: row;
+    height: 380px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity ;
+}
+
+/*Ahora si voy con cada tabla:*/
+
+.main-currency-table, .main-commission-table{
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 235px;
+    max-width: 270px;
+    height: 360px;
+    margin: 0 30px 0;
+    font-family: 'Inter',sans-serif;
+}
+
+.main-currency-table .currency-table--title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color:var(--bitcoin-orange);
+}
+
+
+
+.currency-table--container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.currency-table--container table{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.currency-table--container td{
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color:var(--grey);
+    background-color:var(--just-white);
+    padding-left: 15px;
+    text-align: left;
+}
+
+.currency-table--container .table__top-left{
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table--container .table__top-right{
+    border-radius: 0 15px 0 0;
+}
+
+.currency-table--container .table__bottom-left{
+    border-radius: 0 0 0 15px;
+}
+
+.currency-table--container .table__bottom-right{
+    border-radius: 0 0 15px 0;
+}
+
+.currency-table--container .table__right{
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.currency-table--container .down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/trending-down\ 1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table--container .up{
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    margin-left: 15px;
+    background-image: url('./assets/icons/trending-up\ 1.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+.currency-table--date{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+
+.currency-table--date p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-align: center;
+    color:var(--warm-black)
+
+}
+
+/*Ahorita voy a darle estilos a la otra tabla-------------------------------------*/
+
+.main-commission-table .commission-table--title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color:var(--secondary-blue);
+}
+
+.currency-table--date__blue{
+    background-color: var(--soft-blue);
+}
+
+.main-commission-table .currency-table--container .table__right{
+    padding-left: 30px ;
+}
+
+/* Aqui empieza la Sección de BENEFICIOS---------------------------------------------------------*/
+
+.main-product-detail{
+    position: relative;
+    width:100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+
+.product-detail--batata-logo{
+    position: absolute; /*Tenemos que asegurarnos que el contenedor sea position relative ya que el absolute va a buscar al primer elemento padre que tenga position relative para basarse de allí.
+    
+    Es decir me sirve un poco para limitar su movimiento.
+
+    Esto me sirve para poner el ícono en medio de 2 secciones
+
+    */
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+    background-image: url('./assets/images/logo.svg');
+}
+
+.product-detail--title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-detail--title h2{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+.product-detail--title p{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.product-detail--card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.16);
+}
+
+/*Con esto le doy estilo a todos los icionos y solo les cambio el fondo*/
+.product-detail--card .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    /*background-image:url('./assets/icons/clock.svg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon__clock{
+     background-image:url('./assets/icons/clock.svg');
+}
+
+.icon__eye{
+    background-image:url('./assets/icons/eye.svg');
+}
+
+.icon__money{
+    background-image:url('./assets/icons/dollar-sign-orange.svg');
+}
+
+.icon__check{
+    background-image:url('./assets/icons/check-circle.svg');
+}
+
+.product--card-title{
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+
+}
+
+.product--card-body{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/*Aqui empiezan los estilos de la sección de planes----------------------------------------------------------*/
+
+.bitcoin-img-container{
+    width: 100%;
+    min-width: 320px;
+    min-height: 75vh;
+    background-image: url('./assets/images/bitcoinbaby2x.jpg');
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bitcoin-img-container h2{
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+    text-align: center;
+}
+
+
+/*Esta es la seccion de planes veridica---------------------------------------------------------*/
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.plans-title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px ;
+}
+
+.plans-title h2{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+
+.plans-title p{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+/*Aqui va la parte para hacer el scroll entre tarjetas*/
+.plans-container--slider{
+    display: flex;
+    height: 340px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+
+/*Aqui van lso estilos de la tarjeta--------*/
+
+.plans-container--card{
+    position: relative;
+    scroll-snap-align: center; /*para que funcione el slider*/
+    /*Lo que hace es centrarnos automáticamente el contenido que estemos viendo en ese instante*/
+    width: 70%;
+    min-width: 220px;
+    max-width: 260px;
+    height: 250px;
+    margin: 0px 10px 0; /*Aqui estaba 50px en lugar de 0px*/
+    padding: 0 15px;
+    top: 20px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+    /*offset x, offset y , blur radius y color*/
+}
+
+
+/*Aqui voy a cambiar los estilos según las tarjetas*/
+.plans-tag{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    top: -15px;
+    left: calc(50% - 60px);
+    font-size: 1.2rem;
+    /*background-color: var(--bitcoin-orange);*/
+    border-radius: 8px;
+    color: var(--just-white); 
+    font-family: 'Inter',sans-serif; 
+}
+
+.plans-tag__recomended{
+     background-color: var(--bitcoin-orange);
+}
+
+.plans-tag__basic{
+    background-color: var(--secondary-blue);
+}
+
+.plans-tag__unlimited{
+    background-color: var(--black);
+     box-shadow: 0 4px 8px var(--bitcoin-orange);
+     color: var(--bitcoin-orange);
+}
+
+.plan-card--title{
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.plan-card--price{
+    padding: 5px 0;
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    color: black;
+}
+
+.plan-card--price span{
+    position: absolute;
+    top: 60px;
+    left: calc(50% - 40px);
+     /*vertical-align: text-top;  Esta es otra forma para mandar el signo de dolar hacia arriba pero no queda tan bacano */
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-family: 'Inter',sans-serif;   
+}
+
+/*Este es para arregalr el simbolo de "$" em el plan de 199*/
+.plan-card--price .unlimited-price{
+    left: calc(50% - 50px);
+}
+
+
+.plan-card--saving{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #757575;
+    font-family: 'Inter',sans-serif; 
+    text-align: center;
+}
+
+.plan-card--ca{
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 10px;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    text-align: center;
+    color: var(--warm-black);
+}
+
+.plan-card--ca span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(./assets/icons/arrow-right-orange.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}
+
+/*Aqui van los estilos del footer---------------------------------------------------------------------------------------*/
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+    
+}
+
+footer section{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+.left li{
+    margin: 10px 0;
+}
+
+.left a{
+    text-decoration: none;
+    color: var(--just-white);
+}
+
+
+
